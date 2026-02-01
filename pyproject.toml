@@ -1,0 +1,14 @@
+[project]
+name = "predicting-heart-disease"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "jupyter>=1.1.1",
+    "matplotlib>=3.10.8",
+    "nump>=5.5.5.5",
+    "numpy>=2.4.2",
+    "pillow>=12.1.0",
+    "seaborn>=0.13.2",
+]
