@@ -9,25 +9,27 @@ A complete machine learning pipeline for Kaggle Playground Series S6E2 competiti
 - **Metric**: AUC-ROC
 - **Task**: Binary Classification
 
+## 🔗 Kaggle Notebook
+
+> [!NOTE]
+> This solution achieved **AUC 0.95173** 
+
+- **[View Notebook on Kaggle](https://www.kaggle.com/code/jieuna1/ps-s6e2-tabm-optuna-full-pipeline)** (Live Version)
+- **[View Local Notebook](notebook/kaggle_solution.ipynb)** (Executed Version)
+
 ## 📁 Project Structure
 
 ```
 predicting_heart_disease/
 ├── data/
-│   └── playground-series-s6e2/
-│       ├── train.csv          # 630,000 samples
-│       └── test.csv           # 420,000 samples
+│   └── playground-series-s6e2/      # Dataset
 ├── src/
-│   ├── train/
-│   │   └── train.py           # Main training script
-│   └── utils/
-│       ├── config.py          # Configuration dataclass
-│       ├── logger.py          # Experiment logger
-│       └── preprocessing.py   # Data preprocessing
+│   ├── train/                       # Training scripts
+│   └── utils/                       # Utility functions
 ├── notebook/
-│   ├── 01_data_exploration.ipynb
-│   └── kaggle_submission.ipynb  # Kaggle competition notebook
-├── runs/                      # Training runs & checkpoints
+│   ├── 01_data_exploration.ipynb    # EDA
+│   └── kaggle_solution.ipynb        # Full solution pipeline
+├── runs/                            # Experiment tracking
 └── README.md
 ```
 
@@ -87,17 +89,16 @@ uv run python -m src.train.train --n_trials 50 --epochs 100
 
 ### Kaggle Submission
 
-1. Upload `notebook/kaggle_submission.ipynb` to Kaggle
-2. Enable GPU accelerator (Settings → GPU T4 x2)
-3. Run all cells
-4. Submit generated `submission.csv`
+1. Upload `notebook/kaggle_solution.ipynb` to Kaggle
+2. Enable **GPU T4 x2** accelerator
+3. Run all cells to generate `submission.csv`
 
 ## 📊 Results
 
 | Metric | Score |
 |--------|-------|
-| Validation AUC-ROC | ~0.95 |
-| Validation Accuracy | ~88% |
+| Validation AUC-ROC | **0.9545** |
+| Validation Accuracy | **~88%** |
 
 ## 🔧 Configuration
 
